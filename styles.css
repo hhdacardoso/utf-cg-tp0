@@ -8,8 +8,8 @@ body{
 }
 
 .circular{
-    border-radius: 65%;
-    shape-outside: circle(65%);
+    border-radius: 50%;
+    shape-outside: circle(50%);
 }
 
 button{

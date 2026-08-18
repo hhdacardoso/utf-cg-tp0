@@ -1,15 +1,31 @@
-
 let botao = document.querySelector('#effect-button');
-if (!botao){
-    console.log("Erro no botão")
-} else {
-    console.log("Botao normal")
-}
+const texts = document.querySelectorAll('p1, p2, p3, p4, h1');
 
 function changeBackground(){
-    const colorList = ["White", "Blue", "Red", "Green", (0, 153, 255, 0.849)];
+    const colorList = ["rgb(0, 0, 255)", 
+        "rgb(0, 0, 0)", 
+        "rgb(255, 255, 255)", 
+        "rgb(0, 255, 0)", 
+        "rgb(255, 0, 0)"];
     
-    document.body.style.backgroundColor = colorList[Math.floor(Math.random() * colorList.length)];
+    colorChoice = colorList[Math.floor(Math.random() * colorList.length)];
+    const backgroundColor = window.getComputedStyle(document.body).backgroundColor;
+    console.log(backgroundColor);
+    while (colorChoice === backgroundColor){
+        console.log("Cor repetida, sorteando novamente.");
+        colorChoice = colorList[Math.floor(Math.random() * colorList.length)];
+    } 
+    document.body.style.backgroundColor = colorChoice;
+
+    if (colorChoice === "rgb(0, 0, 0)" || colorChoice === "rgb(255, 0, 0)"){
+        texts.forEach(element => {
+            element.style.color = "white";
+        })
+    } else {
+        texts.forEach(element => {
+            element.style.color = "black";
+        })
+    }
 }
 
 botao.addEventListener("click", changeBackground);
