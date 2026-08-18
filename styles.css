@@ -11,3 +11,9 @@ body{
     border-radius: 65%;
     shape-outside: circle(65%);
 }
+
+button{
+    background-color: rgb(210, 9, 210);
+    top: 50%;
+    left: 50%;
+}
