@@ -1,0 +1,13 @@
+html, body {
+    min-height: 100%;
+}
+
+body{
+    background-color: rgba(0, 153, 255, 0.849);
+    font-family: "Geist", sans-serif;
+}
+
+.circular{
+    border-radius: 65%;
+    shape-outside: circle(65%);
+}
